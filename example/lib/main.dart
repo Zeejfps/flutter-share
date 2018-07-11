@@ -68,7 +68,7 @@ class DemoAppState extends ReceiveShareState<DemoApp> {
                               // a RenderObjectWidget. The RaisedButton's RenderObject
                               // has its position and size after it's built.
                               final RenderBox box = context.findRenderObject();
-                              Share.plainText(text: _text).share(
+                              Share.image(path: "/var/mobile/Containers/Data/Application/DDC011F5-BA6A-4B7D-AFC7-FEA4774894C8/Documents/selfie.png", text: _text).share(
                                   sharePositionOrigin:
                                       box.localToGlobal(Offset.zero) &
                                           box.size);
