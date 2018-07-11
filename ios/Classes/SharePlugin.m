@@ -48,13 +48,14 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
     withController:(UIViewController *)controller
           atSource:(CGRect)origin {
 
-    NSString * path = @[sharedItems[@"path"]];
-    NSLog(@"%@", path);
+    NSString *path = sharedItems[@"path"];
+    NSLog(path);
 
-    UIImage *image = [UIImage imageWithContentsOfFile:@[path]];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    NSArray *items = @[image];
 
   UIActivityViewController *activityViewController =
-      [[UIActivityViewController alloc] initWithActivityItems:@[path]
+      [[UIActivityViewController alloc] initWithActivityItems:items
                                         applicationActivities:nil];
   activityViewController.popoverPresentationController.sourceView = controller.view;
   if (!CGRectIsEmpty(origin)) {
